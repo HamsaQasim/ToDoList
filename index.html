@@ -3,32 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDoList</title>
+    <title>ToDoList Manager</title>
     <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pap..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
+    <div class="container">
+        <h1>TodoInput</h1>
 
-   
-    <h1>ToDoInput</h1>
-    
-    
-    <section class="inputSection" id="inputSection">
+        <section class="inputSection" id="inputSection">
+    <div class="inputBox">
         <div class="inputText">
+            <span class="todo-icon">
+                <i class="fa-solid fa-book"></i>
+            </span>
             <input id="taskInput" type="text" placeholder="New ToDo">
-            <button id="inputButton" >Add new task</button>
-            <small id="inputError" class="error"></small>
-            
         </div>
+        <button id="inputButton">Add new task</button>
+    </div>
+    <small id="inputError" class="error"></small>
+</section>
 
-    </section>
 
-    <ul id="taskList" class="task-list"></ul>
 
-    <section class="buttons">
-      <button id="allButton" class="category" >All</button>
-      <button id="DoneButton" class="category">Done</button>
-      <button id="todoButton" class="category">Todo</button>  
-    </section>
+        <ul id="taskList" class="task-list"></ul>
+
+        <section class="buttons">
+            <button id="allButton" class="category">All</button>
+            <button id="doneButton" class="category">Done</button>
+            <button id="todoButton" class="category">Todo</button>
+        </section>
+
+        <footer class="bottom-buttons">
+            <button id="deleteDoneTasks" class="bottom-delete-btn">Delete Done Tasks</button>
+            <button id="deleteAllTasks" class="bottom-delete-btn">Delete All Tasks</button>
+        </footer>
+    </div>
+
+    <!-- Modal for editing task -->
+    <div id="editPopup" class="modal">
+        <div class="modal-content">
+            <h2>Rename Task</h2>
+            <input type="text" id="modalInput" class="modal-input">
+            <div class="modal-buttons">
+                <button id="saveButton" class="btn save-btn">Save</button>
+                <button id="cancelButton" class="btn cancel-btn">Cancel</button>
+            </div>
+            <span id="modalError" style="color:red; font-size:0.9em"></span>
+        </div>
+    </div>
+
+    <script src="java.js"></script>
 </body>
 </html>
