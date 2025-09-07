@@ -1,9 +1,22 @@
-/* Variables */ :root { --primary: #0b97bb; --dark: #000; --light: #fff; --borders: #9a9898; --footer-bg: #f0f0f0; } 
+/* Variables */
+ :root { 
+    --primary: #0b97bb; 
+    --dark: #000; 
+    --light: #fff; 
+    --borders: #9a9898; 
+    --footer-bg: #f0f0f0; } 
 /* Body */ 
-body { font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: center; background-color: #f7f5f5; padding: 20px; margin: 0; } 
+body { 
+    font-family: Arial, sans-serif; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    background-color: #f7f5f5;
+     padding: 20px; 
+     margin: 0; } 
 /* Container */ 
 .container {
-  max-width: 1100px;  /* جرب 1000 أو 1100 أو حتى 1200 */
+  max-width: 1100px;  
   width: 100%;
   background-color: #fff;
   padding: 30px;
@@ -12,7 +25,12 @@ body { font-family: Arial, sans-serif; display: flex; flex-direction: column; al
   margin-top: 40px;
 }
 
- /* Headings */ h1 { text-align: center; color: #333; margin-bottom: 20px; } 
+ /* Headings */ 
+ h1 {
+     text-align: center; 
+     color: #333; 
+     margin-bottom: 20px; 
+    } 
 /* Box around input and button */
 .inputBox {
   border: 1px solid #ccc;
@@ -143,4 +161,49 @@ body { font-family: Arial, sans-serif; display: flex; flex-direction: column; al
 
 
 
- /* Modal */ .modal { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.5); justify-content: center; align-items: center; } .modal-content { background-color: #fff; padding: 20px; border-radius: 6px; width: 300px; text-align: center; } .modal-input { width: 100%; padding: 8px; margin-bottom: 15px; border-radius: 4px; border: 1px solid #ccc; } .modal-buttons { display: flex; justify-content: space-around; } .save-btn { background-color: #007bff; color: #fff; padding: 8px 15px; border: none; border-radius: 4px; cursor: pointer; } .cancel-btn { background-color: #dc3545; color: #fff; padding: 8px 15px; border: none; border-radius: 4px; cursor: pointer; }
+ /* Modal */ 
+ .modal {
+     display: none;
+      position: fixed;
+       top: 0; 
+       left: 0;
+        width: 100vw; 
+        height: 100vh; 
+        background-color: rgba(0,0,0,0.5); 
+        justify-content: center; 
+        align-items: center; 
+    } 
+    .modal-content {
+         background-color: #fff; 
+         padding: 20px; 
+         border-radius: 6px; 
+         width: 300px; 
+         text-align: center;
+         } 
+         .modal-input { 
+            width: 100%; 
+            padding: 8px; 
+            margin-bottom: 15px; 
+            border-radius: 4px; 
+            border: 1px solid #ccc; 
+        } 
+        .modal-buttons { 
+            display: flex; 
+            justify-content: space-around; 
+        } 
+        .save-btn { 
+            background-color: #007bff;
+             color: #fff; 
+             padding: 8px 15px; 
+             border: none; 
+             border-radius: 4px; 
+             cursor: pointer; 
+            } 
+            .cancel-btn { 
+                background-color: #dc3545; 
+                color: #fff; 
+                padding: 8px 15px; 
+                border: none; 
+                border-radius: 4px; 
+                cursor: pointer; 
+            }
