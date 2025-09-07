@@ -1,0 +1,60 @@
+/*variables*/
+:root {
+  --primary: #0b97bb;
+  --dark: #000;
+  --light: #fff;
+  --borders: #9a9898;
+  --footer-bg: #f0f0f0;
+}
+body{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;     
+    
+}
+
+.inputSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    width: 80%;
+    border: 1px solid var(--borders);
+    border-radius: 2px;
+    padding: 1rem;
+   
+   #taskInput{
+    min-width: 80%;
+   }
+   #inputButton{
+    min-width: 80%;
+    border-color:var(--primary); 
+    background:var(--primary);
+    border-radius: 2px;
+    box-shadow: none;
+
+}
+.error{
+    color: red;
+    display: block;
+}
+
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    gap:1rem;
+    max-width: 80%;
+
+    .category{
+        width: 70rem;
+         border-color:var(--primary); 
+         background:var(--primary);
+         border-radius: 2px;
+    }
+}
+
+
