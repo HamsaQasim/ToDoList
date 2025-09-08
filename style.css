@@ -87,6 +87,14 @@ body {
   background-color: #096e91;
 }
 
+#error, #inputError {
+    color: red;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+
+
 
 /* Category Buttons (All, Done, Todo) */
 .buttons {
@@ -113,26 +121,28 @@ body {
 }
 
 /* Task List */
-.task-list {
-  list-style: none;
+#taskCont {
+  list-style: block;
   padding: 0;
   width: 100%;
 }
 
-.todo-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background-color: #fff;
+.taskItem { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
 }
 
-.todo-text.completed {
-  text-decoration: line-through;
-  color: #be1212;
+
+/* Completed task text */
+.taskItem.completed span {
+    text-decoration: line-through;
+    color: #be1212;
 }
 
 /* Footer Buttons */

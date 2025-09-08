@@ -13,9 +13,9 @@
         <h1>TodoInput</h1>
 
         <section class="inputSection" id="inputSection">
-    <div class="inputBox">
-        <div class="inputText">
-            <span class="todo-icon">
+            <div class="inputBox">
+              <div class="inputText">
+               <span class="todo-icon">
                 <i class="fa-solid fa-book"></i>
             </span>
             <input id="taskInput" type="text" placeholder="New ToDo">
@@ -23,16 +23,24 @@
         <button id="inputButton">Add new task</button>
     </div>
     <small id="inputError" class="error"></small>
-</section>
+       </section>
 
 
-
-        <ul id="taskList" class="task-list"></ul>
 
         <section class="buttons">
             <button id="allButton" class="category">All</button>
             <button id="doneButton" class="category">Done</button>
             <button id="todoButton" class="category">Todo</button>
+        </section>
+
+        
+        <section class="list" id="list">
+            <ul id="taskCont">
+                
+               
+            </ul>
+        
+
         </section>
 
         <footer class="bottom-buttons">
@@ -54,6 +62,6 @@
         </div>
     </div>
 
-    <script src="java.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
