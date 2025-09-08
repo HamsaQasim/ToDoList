@@ -1,36 +1,38 @@
 /* Variables */
- :root { 
-    --primary: #0b97bb; 
-    --dark: #000; 
-    --light: #fff; 
-    --borders: #9a9898; 
-    --footer-bg: #f0f0f0; } 
-/* Body */ 
-body { 
-    font-family: Arial, sans-serif; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    background-color: #f7f5f5;
-     padding: 20px; 
-     margin: 0; } 
-/* Container */ 
+:root {
+  --primary: #0b97bb;
+  --dark: #000;
+  --light: #fff;
+  --borders: #9a9898;
+  --footer-bg: #f0f0f0;
+}
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f7f5f5;
+  padding: 20px;
+  margin: 0;
+}
+/* Container */
 .container {
-  max-width: 1100px;  
+  max-width: 1100px;
   width: 100%;
   background-color: #fff;
   padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   margin-top: 40px;
 }
 
- /* Headings */ 
- h1 {
-     text-align: center; 
-     color: #333; 
-     margin-bottom: 20px; 
-    } 
+/* Headings */
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
 /* Box around input and button */
 .inputBox {
   border: 1px solid #ccc;
@@ -87,14 +89,13 @@ body {
   background-color: #096e91;
 }
 
-#error, #inputError {
-    color: red;
-    font-size: 12px;
-    display: block;
-    margin-top: 5px;
+#error,
+#inputError {
+  color: red;
+  font-size: 12px;
+  display: block;
+  margin-top: 5px;
 }
-
-
 
 /* Category Buttons (All, Done, Todo) */
 .buttons {
@@ -127,23 +128,22 @@ body {
   width: 100%;
 }
 
-.taskItem { 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: #fff;
+.taskItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+
 }
-
-
-/* Completed task text */
 .taskItem.completed span {
-    text-decoration: line-through;
-    color: #be1212;
+  text-decoration: line-through;
+  color: #be1212;
 }
+
 
 /* Footer Buttons */
 .bottom-buttons {
@@ -168,52 +168,72 @@ body {
   background-color: #a71c2a;
 }
 
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  width: 300px;
+  text-align: center;
+}
+.modal-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+.save-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.cancel-btn {
+  background-color: #dc3545;
+  color: #fff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
+li {
 
+    i {
+      
+      transition: color 0.2s;
 
- /* Modal */ 
- .modal {
-     display: none;
-      position: fixed;
-       top: 0; 
-       left: 0;
-        width: 100vw; 
-        height: 100vh; 
-        background-color: rgba(0,0,0,0.5); 
-        justify-content: center; 
-        align-items: center; 
-    } 
-    .modal-content {
-         background-color: #fff; 
-         padding: 20px; 
-         border-radius: 6px; 
-         width: 300px; 
-         text-align: center;
-         } 
-         .modal-input { 
-            width: 100%; 
-            padding: 8px; 
-            margin-bottom: 15px; 
-            border-radius: 4px; 
-            border: 1px solid #ccc; 
-        } 
-        .modal-buttons { 
-            display: flex; 
-            justify-content: space-around; 
-        } 
-        .save-btn { 
-            background-color: #007bff;
-             color: #fff; 
-             padding: 8px 15px; 
-             border: none; 
-             border-radius: 4px; 
-             cursor: pointer; 
-            } 
-            .cancel-btn { 
-                background-color: #dc3545; 
-                color: #fff; 
-                padding: 8px 15px; 
-                border: none; 
-                border-radius: 4px; 
-                cursor: pointer; 
-            }
+      &.edit-btn {
+        color: yellow;
+        &:hover {
+          color: gray;
+        }
+      }
+
+      &.delete-btn {
+        color: #dc3545;
+        &:hover {
+          color: #a71c2a;
+        }
+      }
+    }
+  }
+  
