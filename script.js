@@ -129,18 +129,4 @@ todoButton.addEventListener('click', () => {
     });
 });
 
-//delete done tasks button
-deleteDoneTasks.addEventListener('click', () => {
-    // Optional: confirm before deleting
-    if (!confirm("Are you sure you want to delete all done tasks?")) return;
-
-    // Remove tasks that are done
-    tasks = tasks.filter(task => !task.done);
-
-    // Update localStorage
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-
-    // Re-render list
-    getTasks();
-});
 
