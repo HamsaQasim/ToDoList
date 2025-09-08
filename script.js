@@ -21,11 +21,9 @@ const cancelButton = document.getElementById("cancelButton");
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 let modalMode = ""; // "edit", "delete", "deleteDone", "deleteAll"
-let modalTaskIndex = null;
+let modalTaskId = null;
 
-// --- Functions ---
-
-// Add task
+// --- Add Task ---
 const addTask = () => {
     const text = input.value.trim();
 
@@ -44,14 +42,16 @@ const addTask = () => {
     }
 
     errMsg.textContent = "";
+
     const task = { id: Date.now(), text: text, done: false };
     tasks.push(task);
-    saveTasks();
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    getTasks();
     input.value = "";
 };
 
-// Render tasks
-const renderTasks = (filter = "all") => {
+// --- Render Tasks ---
+const getTasks = (filter = "all") => {
     taskCont.innerHTML = "";
 
     let filteredTasks = tasks;
@@ -63,11 +63,10 @@ const renderTasks = (filter = "all") => {
         return;
     }
 
-    filteredTasks.forEach((task, index) => {
+    filteredTasks.forEach(task => {
         const li = document.createElement("li");
         li.className = task.done ? "taskItem completed" : "taskItem";
         li.dataset.id = task.id;
-        li.dataset.index = index;
         li.innerHTML = `
             <span>${task.text}</span>
             <div>
@@ -80,28 +79,19 @@ const renderTasks = (filter = "all") => {
     });
 };
 
-// Save tasks
-const saveTasks = () => {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-    renderTasks();
-};
-
-// Open modal
-const openModal = (mode, index = null) => {
+// --- Modal Functions ---
+const openModal = (mode, taskId = null) => {
     modalMode = mode;
-    modalTaskIndex = index;
-
-    modalInput.style.display = "none"; // hide input by default
+    modalTaskId = taskId;
+    modalInput.style.display = "none";
     modalInput.value = "";
     modalError.textContent = "";
-
-    // Reset buttons colors
-    saveButton.style.backgroundColor = "#6c757d"; // confirm gray default
+    saveButton.style.backgroundColor = "#6c757d"; // confirm gray
     cancelButton.style.backgroundColor = "#dc3545"; // cancel red
 
     if (mode === "edit") {
         modalInput.style.display = "block";
-        modalInput.value = tasks[index].text;
+        modalInput.value = tasks.find(t => t.id === taskId).text;
         editModal.querySelector("h2").textContent = "Rename Task";
         saveButton.textContent = "Save";
     } else if (mode === "delete") {
@@ -121,41 +111,36 @@ const openModal = (mode, index = null) => {
     editModal.style.display = "flex";
 };
 
-// Close modal
 const closeModal = () => {
     editModal.style.display = "none";
 };
 
 // --- Event Listeners ---
-
-// Add task
 addBtn.addEventListener("click", addTask);
-input.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") addTask();
-});
+input.addEventListener("keypress", (e) => { if (e.key === "Enter") addTask(); });
 
 // Task interactions
 taskCont.addEventListener("click", (e) => {
     const li = e.target.closest("li");
     if (!li || li.classList.contains("no-tasks")) return;
-    const index = Number(li.dataset.index);
-    const task = tasks[index];
+    const taskId = Number(li.dataset.id);
+    const task = tasks.find(t => t.id === taskId);
 
     // Toggle checkbox
     if (e.target.type === "checkbox") {
         task.done = e.target.checked;
         li.classList.toggle("completed", task.done);
-        saveTasks();
+        localStorage.setItem("tasks", JSON.stringify(tasks));
     }
 
     // Edit
     if (e.target.classList.contains("edit-btn")) {
-        openModal("edit", index);
+        openModal("edit", taskId);
     }
 
-    // Delete
+    // Delete single
     if (e.target.classList.contains("delete-btn")) {
-        openModal("delete", index);
+        openModal("delete", taskId);
     }
 });
 
@@ -175,25 +160,26 @@ saveButton.onclick = () => {
             modalError.textContent = "Task cannot contain letters and numbers together!";
             return;
         }
-        tasks[modalTaskIndex].text = newText;
+        tasks.find(t => t.id === modalTaskId).text = newText;
     } else if (modalMode === "delete") {
-        tasks.splice(modalTaskIndex, 1);
+        tasks = tasks.filter(t => t.id !== modalTaskId);
     } else if (modalMode === "deleteDone") {
         tasks = tasks.filter(t => !t.done);
     } else if (modalMode === "deleteAll") {
         tasks = [];
     }
+    localStorage.setItem("tasks", JSON.stringify(tasks));
     closeModal();
-    saveTasks();
+    getTasks();
 };
 
 // Cancel modal
 cancelButton.onclick = closeModal;
 
 // Filter buttons
-allButton.addEventListener("click", () => renderTasks("all"));
-doneButton.addEventListener("click", () => renderTasks("done"));
-todoButton.addEventListener("click", () => renderTasks("todo"));
+allButton.addEventListener("click", () => getTasks("all"));
+doneButton.addEventListener("click", () => getTasks("done"));
+todoButton.addEventListener("click", () => getTasks("todo"));
 
 // Delete done tasks
 deleteDoneTasks.addEventListener("click", () => {
@@ -203,12 +189,9 @@ deleteDoneTasks.addEventListener("click", () => {
 
 // Delete all tasks
 deleteAllTasks.addEventListener("click", () => {
-    if (tasks.length === 0) {
-        renderTasks();
-        return;
-    }
+    if (tasks.length === 0) { getTasks(); return; }
     openModal("deleteAll");
 });
 
 // Initial render
-renderTasks();
+getTasks();
