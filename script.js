@@ -1,3 +1,4 @@
+
 console.log("js");
 
 // Elements
@@ -195,3 +196,4 @@ deleteAllTasks.addEventListener("click", () => {
 
 // Initial render
 getTasks();
+

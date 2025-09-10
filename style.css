@@ -6,7 +6,10 @@
   --borders: #9a9898;
   --footer-bg: #f0f0f0;
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 106bea765a91eb985c70041c5b5b2f293c8f2082
 /* Body */
 body {
   font-family: Arial, sans-serif;
@@ -17,7 +20,10 @@ body {
   padding: 20px;
   margin: 0;
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 106bea765a91eb985c70041c5b5b2f293c8f2082
 /* Container */
 .container {
   max-width: 1100px;
@@ -35,7 +41,10 @@ h1 {
   color: #333;
   margin-bottom: 20px;
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 106bea765a91eb985c70041c5b5b2f293c8f2082
 /* Box around input and button */
 .inputBox {
   border: 1px solid #ccc;
@@ -126,7 +135,11 @@ h1 {
 
 /* Task List */
 #taskCont {
+<<<<<<< HEAD
+  list-style: block;
+=======
   list-style: none;
+>>>>>>> 106bea765a91eb985c70041c5b5b2f293c8f2082
   padding: 0;
   width: 100%;
 }
@@ -140,19 +153,25 @@ h1 {
   border: 1px solid #ddd;
   border-radius: 4px;
   background-color: #fff;
-}
 
+<<<<<<< HEAD
+}
+=======
+>>>>>>> 106bea765a91eb985c70041c5b5b2f293c8f2082
 .taskItem.completed span {
   text-decoration: line-through;
   color: #be1212;
 }
 
+<<<<<<< HEAD
+=======
 .no-tasks {
   text-align: center;
   padding: 20px;
   color: #555;
   font-weight: bold;
 }
+>>>>>>> 106bea765a91eb985c70041c5b5b2f293c8f2082
 
 /* Footer Buttons */
 .bottom-buttons {
@@ -189,6 +208,65 @@ h1 {
   justify-content: center;
   align-items: center;
 }
+<<<<<<< HEAD
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  width: 300px;
+  text-align: center;
+}
+.modal-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+.save-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.cancel-btn {
+  background-color: #dc3545;
+  color: #fff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+li {
+
+    i {
+      
+      transition: color 0.2s;
+
+      &.edit-btn {
+        color: yellow;
+        &:hover {
+          color: gray;
+        }
+      }
+
+      &.delete-btn {
+        color: #dc3545;
+        &:hover {
+          color: #a71c2a;
+        }
+      }
+    }
+  }
+  
+=======
 
 .modal-content {
   background-color: #fff;
@@ -254,3 +332,4 @@ h1 {
 .taskItem i.delete-btn:hover {
   color: #a71c2a;
 }
+>>>>>>> 106bea765a91eb985c70041c5b5b2f293c8f2082
