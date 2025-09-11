@@ -1,131 +1,132 @@
 /* Variables */
 :root {
-  --primary: #0b97bb;
-  --dark: #000;
-  --light: #fff;
-  --borders: #9a9898;
-  --footer-bg: #f0f0f0;
+  --primary: #0b97bb; /*لون الصفحة الرئيسي للأشياء المستخدم*/
+  --dark: #000;/*لون الخط الرئيسي المستعمل*/
+  --light: #fff;/*لون الاضاءة للصفحة*/
+  --borders: #9a9898;/*لون الحدود*/
+  --footer-bg: #f0f0f0;/*لون الخلفية بالنهاية*/
 }
 
 /* Body */
 body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #f7f5f5;
-  padding: 20px;
-  margin: 0;
+  font-family: Arial, sans-serif;/* نوعية الخطوط المستعملة*/
+  display: flex;/*ظهور مرن للصفحة*/
+  flex-direction: column;/*شكل ظهور عمودي*/
+  align-items: center;/*ترتيب العناصر بالمنتصف*/
+  background-color: #f7f5f5;/*لون الخلفية بالفقرة*/
+  padding: 20px;/*درجة الحشوة*/
+  margin: 0;/*درجة الفصل بين العناصر المحيطة*/
 }
 
 /* Container */
+/*الحاوية التي تحتوي كل شيء*/
 .container {
-  max-width: 1100px;
-  width: 100%;
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  margin-top: 40px;
+  max-width: 1100px;/*اقصى عرض لها لتظهر بالصفحة*/
+  width: 100%;/*مسافة العرض بداخل الحاوية*/
+  background-color: var(--light);/*لون الخلفية للحاوية*/
+  padding: 30px;/*الحد بين الحدود والعناصر*/
+  border-radius: 8px;/*نصف قطر الحدود*/
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);/*درجة لون الظلال*/
+  margin-top: 40px;/*درجة الفاصل بين العناصر من الاعلى*/
 }
 
 /* Headings */
-h1 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 20px;
+h1 { /*عنوان رئيسي*/
+  text-align: center;/*اتجاه الخط بالمنتصف*/
+  color: #333;/*لون الخط الرئيسي*/
+  margin-bottom: 20px;/*المسافة بينها وبين العنصر الذي بالاسفل*/
 }
 
 /* Box around input and button */
-.inputBox {
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  padding: 15px;
-  background-color: #fff;
-  margin-bottom: 20px;
+.inputBox {/*مكان الادخال*/
+  border: 1px solid #ccc;/*حدود الصندوق تبع الادخال*/
+  border-radius: 6px;/*نصف قطر الحدود*/
+  padding: 15px;/*المسافة بين الحدود والعناصر*/
+  background-color: var(--light);/*لون الخلفية*/
+  margin-bottom: 20px;/*المسافة بين العنصر وأسفله*/
 }
 
 /* Input with icon */
-.inputText {
-  display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  overflow: hidden;
-  background-color: #fff;
-  margin-bottom: 10px;
+.inputText {/*الادخال*/
+  display: flex;/*العرض مرن*/
+  align-items: center;/*يجو بمنتصف الحاوية*/
+  border: 1px solid #ccc;/*الحدود المحيطة بالايقونة*/
+  border-radius: 4px;/*نصف قطر الحدود*/
+  overflow: hidden;/* تُستخدم لإخفاء أي محتوى يتجاوز حجم العنصر*/
+  background-color: var(--light);/*لون الخلفية للايقونة*/
+  margin-bottom: 10px;/*المسافة بين العنصر وتحته*/
 }
 
 /* Icon */
-.todo-icon {
-  background-color: var(--primary);
-  color: white;
-  padding: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
+.todo-icon {/*الايقونة تبعت الكتاب*/
+  background-color: var(--primary);/*لون الخلفية الرئيسي*/
+  color: white;/*لون الايقونة*/
+  padding: 12px;/*مسافة بين الحد والعناصر*/
+  display: flex;/*العرض المرن*/
+  align-items: center;/*اتجاه العناصر بالمنتصف*/
+  justify-content: center;/*المكونات تظهر بالمنتصف*/
+  font-size: 18px;/*درجة الخط*/
 }
 
 /* Input field */
-#taskInput {
-  flex: 1;
-  padding: 12px;
-  font-size: 16px;
-  border: none;
-  outline: none;
+#taskInput {/*نص ادخال*/
+  flex: 1;/*المرونة*/
+  padding: 12px;/*المسافة بين الحدود والعناصر*/
+  font-size: 16px;/*حجم الخط*/
+  border: none;/*لا اريد حدود*/
+  outline: none;/*بدون نص خارجي*/
 }
 
 /* Button under input (inside box) */
-#inputButton {
-  width: 100%;
-  padding: 12px;
-  background-color: var(--primary);
-  color: var(--light);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
+#inputButton {/*زر الخاص بالادخال*/
+  width: 100%;/*كم يحتل عرض داخل الصندوق المحيط به*/
+  padding: 12px;/*المسافة بين الحد والعناصر*/
+  background-color: var(--primary);/*لون الخلفية لون رئيسي*/
+  color: var(--light);/*لون الخط للزر*/
+  border: none;/*لا حدود*/
+  border-radius: 4px;/*نصف قطر حدود زر الادخال*/
+  cursor: pointer;/*تأشير*/
+  font-size: 16px;/*حجم الخط*/
 }
 
-#inputButton:hover {
-  background-color: #096e91;
+#inputButton:hover {/*مؤشر زر الادخال*/
+  background-color: #096e91;/*لون الخلفية عندما يتم تاشير على زر ماذا يصبح؟*/
 }
 
 #error,
-#inputError {
-  color: red;
-  font-size: 12px;
-  display: block;
-  margin-top: 5px;
+#inputError {/*الخطأ والادخال الخاطئ*/
+  color: red;/*لون الخطأ*/
+  font-size: 12px;/*حجم الخط*/
+  display: block;/*طريقة العرض هي كتلة مستقلة*/
+  margin-top: 5px;/*المسافة بين العنصر والحدود*/
 }
 
 /* Category Buttons (All, Done, Todo) */
-.buttons {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin: 20px 0;
+.buttons {/*أزرار كل من all,Done,Todo*/
+  display: flex;/*العرض بينهم مرن*/
+  gap: 10px;/*الفجوة*/
+  justify-content: center;/*عناصر العنصر داخل الأب تأتي بالمنتصف*/
+  margin: 20px 0;/*هو المسافة بين الحدود للزر والنص الي بداخل العنصر المسافة بالعرض 20 والطول 0*/
 }
 
-.category {
-  flex: 1;
-  padding: 12px;
-  border-radius: 4px;
-  background-color: var(--primary);
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  text-align: center;
-  font-size: 16px;
+.category {/*حملة الازرار*/
+  flex: 1;/*المسافة المرنة بين الأزرار*/
+  padding: 12px;/*المسافة بين العناصر*/
+  border-radius: 4px;/*حدود الازرار*/
+  background-color: var(--primary);/*لون الخلفية*/
+  color: var(--light);/*لون الازرار*/
+  border: none;/*ما في حدود*/
+  cursor: pointer;/*مؤشر*/
+  text-align: center;/*النص بالمنتصف*/
+  font-size: 16px;/*حجم الخط*/
 }
 
-.category:hover {
-  background-color: #096e91;
+.category:hover {/*التاشير على الازرار*/
+  background-color: #096e91;/*لون الخلفية ماذا تصبح عند التأشير*/
 }
 
 /* Task List */
-#taskCont {
+#taskCont {/*يحسب عدد التاسكات*/
   list-style: none;
   padding: 0;
   width: 100%;
@@ -139,7 +140,7 @@ h1 {
   margin-bottom: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  background-color: #fff;
+  background-color: var(--light);
 }
 
 .taskItem.completed span {
@@ -167,7 +168,7 @@ h1 {
   padding: 12px;
   border-radius: 4px;
   background-color: #dc3545;
-  color: #fff;
+  color: var(--light);
   border: none;
   cursor: pointer;
   font-size: 16px;
@@ -191,7 +192,7 @@ h1 {
 }
 
 .modal-content {
-  background-color: #fff;
+  background-color: var(--light);
   padding: 20px;
   border-radius: 6px;
   width: 300px;
@@ -216,7 +217,7 @@ h1 {
 
 .save-btn {
   background-color: #007bff;
-  color: #fff;
+  color: var(--light);
   padding: 8px 15px;
   border: none;
   border-radius: 4px;
@@ -225,7 +226,7 @@ h1 {
 
 .cancel-btn {
   background-color: #dc3545;
-  color: #fff;
+  color: var(--light);
   padding: 8px 15px;
   border: none;
   border-radius: 4px;
