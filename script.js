@@ -37,10 +37,13 @@ const addTask = () => {
         errMsg.textContent = "Task must be at least 5 characters long!";
         return;
     }
-    if (/[a-zA-Z]/.test(text) && /\d/.test(text)) {
-        errMsg.textContent = "Task cannot contain letters and numbers together!";
+   
+
+    if (/^\d/.test(text)) {
+        errMsg.textContent = "Task cannot start with a number!";
         return;
     }
+
 
     errMsg.textContent = "";
 
@@ -52,7 +55,7 @@ const addTask = () => {
 };
 
 // --- Render Tasks ---
-const getTasks = (filter = "all") => {
+const getTasks = (filter = "all") => {  //That "all" is the default parameter value for filter=> so if we dont include sth it will work 
     taskCont.innerHTML = "";
 
     let filteredTasks = tasks;
@@ -157,8 +160,8 @@ saveButton.onclick = () => {
             modalError.textContent = "Task must be at least 5 characters long!";
             return;
         }
-        if (/[a-zA-Z]/.test(newText) && /\d/.test(newText)) {
-            modalError.textContent = "Task cannot contain letters and numbers together!";
+        if (/^\d/.test(newText)) {
+            modalError.textContent = "Task cannot start with a number!";
             return;
         }
         tasks.find(t => t.id === modalTaskId).text = newText;
